@@ -8,9 +8,8 @@ import (
 	"strings"
 )
 
-var combinations = make(map[int]int)
-
 func solve(chain []int) (c int) {
+	combinations := make(map[int]int)
 	combinations[0] = 1
 	for i, adapter := range chain {
 		combinations[adapter] = combinations[adapter-1] + combinations[adapter-2] + combinations[adapter-3]
