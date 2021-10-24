@@ -57,24 +57,16 @@ func main() {
 	// This has no effect on the solution, and therefore the first element can now be removed/ignored
 	buses = buses[1:]
 
-	// Calculate N for each bus
+	T := 0
+	// Calculate N and x for each bus
 	for _, bus := range buses {
 		bus.N = N / bus.n
-	}
-
-	// Find x for each bus
-	for _, bus := range buses {
 		base := bus.N % bus.n
 		for bus.x = 1; (base*bus.x)%bus.n != 1; bus.x++ {
 		}
+		T += bus.a * bus.N * bus.x
 	}
-
-	// Calculate t, the solution (mod N)
-	t := 0
-	for _, bus := range buses {
-		t += bus.a * bus.N * bus.x
-	}
-	t %= N
+	t := T % N // t = (T % N) is the solution, satisfying all congruences of t % n = a
 
 	fmt.Println(t)
 }
