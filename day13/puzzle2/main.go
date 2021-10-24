@@ -56,6 +56,8 @@ func main() {
 	// Because a = 0 for the first element in the list, it can be predicted that a0 * N0 * x0 == 0
 	// This has no effect on the solution, and therefore the first element can now be removed/ignored
 	buses = buses[1:]
+
+	// Calculate N for each bus
 	for _, bus := range buses {
 		bus.N = N / bus.n
 	}
