@@ -14,7 +14,7 @@ type Bus struct {
 	a int
 	n int
 	N int // Ni = N / ni
-	x int // Nx % ni = 1
+	x int // Nixi % ni = 1
 }
 
 func main() {
